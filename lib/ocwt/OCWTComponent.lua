@@ -1,4 +1,4 @@
-local wtcomponent = []
+local OCWTComponent = {}
 
 local component = require("component");
 local gpu = component.gpu;
@@ -7,37 +7,37 @@ local foreground, background; --cosmetic
 local parentComponent; --tree
 local x, y, width, height; --position
 
-function wtcomponent.render()
+function OCWTComponent.render()
   gpu.setForeground(foreground);
   gpu.setBackground(background);
   gpu.fill(x, y, width, height);
 end
 
-function wtcomponent.getParent()
+function OCWTComponent.getParent()
   return parentComponent;
 end
 
-function wtcomponent.setParent(p)
+function OCWTComponent.setParent(p)
   parentComponent = p;
 end
 
-function wtcomponent.getX()
+function OCWTComponent.getX()
   return x;
 end
 
-function wtcomponent.getY()
+function OCWTComponent.getY()
   return y;
 end
 
-function wtcomponent.getWidth()
+function OCWTComponent.getWidth()
   return width;
 end
 
-function wtcomponent.getHeight()
+function OCWTComponent.getHeight()
   return height;
 end
 
-function wtcomponent.getLocation()
+function OCWTComponent.getLocation()
   return x, y;
 end
 
@@ -45,40 +45,40 @@ function wtcomponent.getSize()
   return width, height;
 end
 
-function wtcomponent.getBounds()
+function OCWTComponent.getBounds()
   return x, y, width, height;
 end
 
-function wtcomponent.getParent()
+function OCWTComponent.getParent()
   return parentComponent;
 end
 
-function wtcomponent.setX(xCoord)
+function OCWTComponent.setX(xCoord)
   x = xCoord;
 end
 
-function wtcomponent.setY(yCoord)
+function OCWTComponent.setY(yCoord)
   y = yCoord;
 end
 
-function wtcomponent.setWidth(w)
+function OCWTComponent.setWidth(w)
   width = w;
 end
 
-function wtcomponent.setHeight(h)
+function OCWTComponent.setHeight(h)
   height = h;
 end
 
-function wtcomponent.setLocation(xCoord, yCoord)
+function OCWTComponent.setLocation(xCoord, yCoord)
   x, y = xCoord, yCoord;
 end
 
-function wtcomponent.setSize(w, h)
+function OCWTComponent.setSize(w, h)
   width, height = w, h;
 end
 
-function wtcomponent.setBounds(xCoord, yCoord, w, h)
+function OCWTComponent.setBounds(xCoord, yCoord, w, h)
   x, y, width, height = xCoord, yCoord, w, h;
 end
 
-return wtcomponent;
+return OCWTComponent;
