@@ -4,7 +4,8 @@ local colors = require('colors');
 local component = require('component');
 local gpu = component.gpu;
 
-local background = colors.gray, foreground = colors.black; --Default background and foreground for any Component
+local background = colors.gray;
+local foreground = colors.black; --Default background and foreground for any Component
 
 --[[
  * One must call this function before using any OCWTGraphics' methods
@@ -23,14 +24,13 @@ function OCWTGraphics.drawLine(x1, y1, x2, y2)
   else
     local k = y1 / x1;
     local b = y1 % x1;
-    coordsX = {}, coordsY = {};
     if x2-x1 > y2-y1 then
       for i = x1, x2 do
-        gpu.fill(i, k*i+b, 1, 1);
+        gpu.fill(i, k * i + b, 1, 1);
       end
     else
       for i = y1, y2 do
-        gpu.fill((i-b)/k, i, 1, 1);
+        gpu.fill((i - b) / k, i, 1, 1);
       end
     end
   end
@@ -40,11 +40,12 @@ end
  * Draws a circular arc inside rectangle at (`x`;`y`) with width `w` and height `h`
 ]]
 function OCWTGraphics.drawArc(x, y, w, h --[[, startAngle, arcAngle]])
-  local ox = w/2, oy = h/2; --X and Y coordinates of circle's centre
+  local ox = w/2;
+  local oy = h/2; --X and Y coordinates of circle's centre
   if x-ox != y-oy then
     error('OCWT error: can\'t draw non-circular arcs')
   else
-    local radius = x-ox;
+    local radius = x - ox;
     --if w>h then
       for i = x, w do
         gpu.fill(i, math.sqrt(math.power(radius, 2) - math.power(i - ox, 2)) + oy, 1, 1);
