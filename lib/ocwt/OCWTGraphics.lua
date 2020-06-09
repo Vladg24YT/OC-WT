@@ -48,7 +48,7 @@ function OCWTGraphics.drawArc(x, y, w, h --[[, startAngle, arcAngle]])
     local radius = x - ox;
     --if w>h then
       for i = x, w do
-        gpu.fill(i, math.sqrt(math.power(radius, 2) - math.power(i - ox, 2)) + oy, 1, 1, ' ');
+        gpu.fill(i, math.sqrt(radius^2 - (i - ox)^2) + oy, 1, 1, ' ');
       end
     --elseif w<h then
     --else
