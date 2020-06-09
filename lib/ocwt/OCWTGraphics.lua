@@ -4,7 +4,7 @@ local colors = require('colors');
 local component = require('component');
 local gpu = component.gpu;
 
-local background = colors.7, foreground = colors.15; --Default background and foreground for any Component
+local background = colors.gray, foreground = colors.black; --Default background and foreground for any Component
 
 --[[
  * One must call this function before using any OCWTGraphics' methods
