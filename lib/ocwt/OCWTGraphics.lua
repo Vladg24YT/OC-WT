@@ -40,8 +40,8 @@ end
  * Draws a circular arc inside rectangle at (`x`;`y`) with width `w` and height `h`
 ]]
 function OCWTGraphics.drawArc(x, y, w, h --[[, startAngle, arcAngle]])
-  local ox = w/2;
-  local oy = h/2; --X and Y coordinates of circle's centre
+  local ox = x+w/2;
+  local oy = y+h/2; --X and Y coordinates of circle's centre
   if x-ox != y-oy then
     error('OCWT error: can\'t draw non-circular arcs')
   else
