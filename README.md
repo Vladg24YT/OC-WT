@@ -1,2 +1,2 @@
 # OC-WT
-A GUI library for OpenComputers
+A GUI shell and library for OpenComputers 1.7.5
