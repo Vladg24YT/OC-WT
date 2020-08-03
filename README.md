@@ -1,2 +1,3 @@
 # OC-WT
-A GUI library for OpenComputers
+
+A GUI framework for OpenComputers inspired by [tekUI toolkit](https://github.com/luaforge/tekui)
