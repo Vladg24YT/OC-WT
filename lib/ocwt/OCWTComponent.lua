@@ -6,11 +6,23 @@ local gpu = component.gpu;
 local foreground, background; --cosmetic
 local parentComponent; --tree
 local x, y, width, height; --position
+local components = {};
 
 function OCWTComponent.render()
   gpu.setForeground(foreground);
   gpu.setBackground(background);
-  gpu.fill(x, y, width, height);
+  gpu.fill(x, y, width, height, ' ');
+  for i, _ in ipairs(components) do
+    components[i].render();
+  end
+end
+
+function OCWTComponent.add(comp)
+  for i, _ in ipairs(components) do
+    if components[i+1]==nil then
+      components[i+1] = comp;  
+    end
+  end
 end
 
 function OCWTComponent.getParent()
